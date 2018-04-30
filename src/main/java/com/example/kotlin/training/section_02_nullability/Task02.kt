@@ -6,9 +6,7 @@ class Task02 {
      * Return person image url if provided avatar is not null and contains not empty imageUrl
      * Return example.com in other case
      */
-    fun getImageUrl(person: Person): String {
-        TODO()
-    }
+    fun getImageUrl(person: Person) = person.avatar?.imageUrl ?: "example.com"
 
 }
 

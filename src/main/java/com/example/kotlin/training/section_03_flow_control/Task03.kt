@@ -7,7 +7,13 @@ class Task03 {
      * Returns 0 if list is empty
      */
     fun lengthOfLongestString(values: List<String>): Int {
-        TODO()
+        if (!values.isEmpty()) {
+            return values
+                .map { it.length }
+                .sortedDescending()
+                .first()
+        }
+        return 0
     }
 
     /**
@@ -15,7 +21,9 @@ class Task03 {
      * Function should be case insensitive
      */
     fun numberOfOccurrences(values: List<String>, value: String?): Int {
-        TODO()
+        return values
+                .filter {it.equals(value, ignoreCase = true)}
+                .count()
     }
 
     /**
@@ -23,7 +31,12 @@ class Task03 {
      * Returns 0 if list is empty
      */
     fun sumOfOddNumbers(values: List<Int>?): Int {
-        TODO()
+        if (values != null) {
+            return values
+                    .filter { it % 2 == 1 }
+                    .sum()
+        }
+        return 0
     }
 
     /**
@@ -31,6 +44,8 @@ class Task03 {
      * Return list should be sorted in ascending order
      */
     fun takeNSortedSmallestValues(values: List<Int>, n: Int): List<Int> {
-        TODO()
+        return values
+                .sorted()
+                .take(n)
     }
 }
